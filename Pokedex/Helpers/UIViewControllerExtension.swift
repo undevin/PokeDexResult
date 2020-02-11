@@ -8,15 +8,19 @@
 
 import UIKit
 
-// Recommend they create a snippet.
+// Create a snippet.
 extension UIViewController {
     
-    // Has to be a LocalizedError so we can print the error.errorDescription. The localizedDecription strips our custom descriptions.
     func presentErrorToUser(localizedError: LocalizedError) {
         
+        // Alert from error.
         let alertController = UIAlertController(title: "ERROR", message: localizedError.errorDescription, preferredStyle: .actionSheet)
+        
+        // Dismiss action.
         let dismissAction = UIAlertAction(title: "Ok", style: .cancel)
         alertController.addAction(dismissAction)
+        
+        // Present alert.
         present(alertController, animated: true)
     }
 }
